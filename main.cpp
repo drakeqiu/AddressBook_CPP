@@ -10,11 +10,11 @@
 #include "Server.hpp"
 
 int main(int argc, const char * argv[]) {
-    if (argc != 2) {
-        printf("lack of arguments!\n");
-        return 1;
+    int port = 33000;
+    if (argc == 2) {
+        port = atoi(argv[1]);
     }
-    tcp_server server(atoi(argv[1]));
-    server.recv_message();
+    Server server(port);
+    server.start();
     return 0;
 }

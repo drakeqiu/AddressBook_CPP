@@ -18,16 +18,18 @@
 
 #define MAXSIZE 4096
 
-class tcp_server
+class Server
 {
 private:
     int socket_fd, client_fd;
+    int _listener;
     sockaddr_in _server;
     sockaddr_in _remote;
+    void initialize();
 public:
-    tcp_server(int listen);
-    int recv_message();
-    
+    Server(const int = 8001);
+    virtual ~Server();
+    int start();
 };
 
 #endif /* server_hpp */
