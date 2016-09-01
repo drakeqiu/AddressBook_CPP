@@ -13,6 +13,8 @@
 
 #include <unistd.h>
 #include <iostream>
+#include <cstring>
+#include <cstdlib>
 #include <sys/socket.h>
 #include <arpa/inet.h>
 
